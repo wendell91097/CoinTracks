@@ -86,3 +86,18 @@
     background: #faffeb;
     border-radius: 3%;
 }
+
+.coin-list{
+    background-color: rgba(0, 0, 0, 0.366);
+    color: blanchedalmond;
+}
+
+.table{
+    background-color: rgba(0, 0, 0, 0.366);
+}
+
+@media only screen and (max-width: 900px) {
+    .symbol-col{
+        display: none;
+    }
+}

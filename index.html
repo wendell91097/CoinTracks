@@ -18,7 +18,7 @@
 <title>Crypto Beat</title>
 </head>
 <body class="bg-dark" onload="load_coins()">
-    <nav class="navbar navbar-light bg-light navbar-expand-lg py-3 fixed-top shadow">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-3 fixed-top shadow">
         <div class="container">
             <a href="#" class="navbar-brand">Crypto Beat<small class="text-muted"><h6>Live Price Data</h6></small></a>
             <button
@@ -53,9 +53,9 @@
             </div>
             <!-- Coin List Controls  -->
             <div class="d-flex pt-2 mt-2 justify-content-center">
-                <button type="button" class="btn btn-light shadow mx-1" onclick="load_coins()">Reload Coins</button>
-                <button type="button" class="btn btn-light shadow mx-1" onclick="clear_data()">Clear Coins</button>
-                <button class="dropdown btn btn-light text-dark dropdown-toggle shadow mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button type="button" class="btn btn-dark shadow mx-1" onclick="load_coins()">Reload Coins</button>
+                <button type="button" class="btn btn-dark shadow mx-1" onclick="clear_data()">Clear Coins</button>
+                <button class="dropdown btn btn-dark dropdown-toggle shadow mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Sort
                 </button>
                     <ul class="dropdown-menu col-1">
@@ -84,10 +84,10 @@
             </div>
             <div class="mt-2 scrollbar col-lg-8 col-12 coin-box" style="min-height: 485px;">
                 <table class="table shadow">
-                    <thead style="position: sticky;top: 0; background-color: rgb(25, 23, 23);">
+                    <thead style="position: sticky;top: 0;" class="bg-dark">
                         <tr>
-                            <th class="header" scope="col" style="border-left: 3px solid azure;"></th>
-                            <th class="header text-light" scope="col">Symbol</th>
+                            <th class="header text-light" scope="col">Icon</th>
+                            <th class="header text-light symbol-col" scope="col">Symbol</th>
                             <th class="header text-light" scope="col">Name</th>
                             <th class="header text-light" scope="col">Price</th>
                             <th class="header text-light" scope="col">Supply</th>
@@ -100,6 +100,7 @@
             </div>
         </div>
     </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>

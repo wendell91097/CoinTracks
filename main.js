@@ -33,7 +33,7 @@ const create_list = ( symbol, icon, name, market) => {
     const html = `<tr>
                     <th scope="row">
                     <img src="${icon.thumb}" class="img-fluid p-1" style="height:30px; width:30px"></img></th>
-                    <td>${symbol}</td>
+                    <td class="symbol-col">${symbol}</td>
                     <td onclick="display_coin('${icon.large}','${name}','${symbol}',${market.current_price.aed},${market.high_24h.aed}, ${market.low_24h.aed}, ${market.total_supply})">
                     <a href="#">${name}</a></td>
                     <td>$${market.current_price.aed}</td>
