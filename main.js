@@ -57,7 +57,7 @@ const load_coins = async () => {
     const coins = await getData();
     console.log(coins)
     document.querySelector(DOM_Elements.last_update).innerHTML = ''
-    let update = "Last Updated: " + coins[0]["last_updated"].slice(0,10) + " " + coins[0]["last_updated"].slice(11,19)
+    let update = "Last Updated: " + coins[0]["last_updated"].slice(0,10) + " " + coins[0]["last_updated"].slice(11,19) + " UTC"
     document.querySelector(DOM_Elements.last_update).insertAdjacentHTML('beforeend', update)
     for(let x = 0; x < coins.length; x++){
         create_list(coins[x]['symbol'], coins[x]['image'], coins[x]['name'], coins[x].market_data)
