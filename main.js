@@ -30,14 +30,20 @@ function display_coin( icon, name, symbol, price, high, low, supply ) {
 // Create the Coin List HTML
 
 const create_list = ( symbol, icon, name, market) => {
+    let supply = 0
+    if(market.total_supply) {
+        supply = market.total_supply
+    } else {
+        supply = 0
+    }
     const html = `<tr>
                     <th scope="row">
                     <img src="${icon.thumb}" class="img-fluid p-1" style="height:30px; width:30px"></img></th>
                     <td class="symbol-col">${symbol}</td>
-                    <td onclick="display_coin('${icon.large}','${name}','${symbol}',${market.current_price.aed},${market.high_24h.aed}, ${market.low_24h.aed}, ${market.total_supply})">
+                    <td onclick="display_coin('${icon.large}','${name}','${symbol}',${market.current_price.aed},${market.high_24h.aed}, ${market.low_24h.aed}, ${supply})">
                     <a href="#">${name}</a></td>
                     <td>$${market.current_price.aed}</td>
-                    <td>${market.total_supply}</td></tr>`;
+                    <td>${supply}</td></tr>`;
     document.querySelector(DOM_Elements.coin_list).insertAdjacentHTML('beforeend', html);
     // onclick="show_info(${symbol})";
 };

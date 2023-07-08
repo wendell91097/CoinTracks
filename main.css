@@ -4,22 +4,12 @@
 }
 
 .scrollbar {
-    height: 400px;
+    height: 485px;
     overflow-y: scroll;
 }
 
 .header {
     position: relative;
-}
-
-.table {
-    background-color: rgba(255, 255, 255, .9);
-}
-
-.bg-image{
-    height: 100%;
-    position: absolute;
-    z-index: -1;
 }
 
 *{
@@ -100,4 +90,12 @@
     .symbol-col{
         display: none;
     }
+}
+
+.dropdown-item{
+    color: blanchedalmond;
+}
+
+.btn{
+    width: 98px;
 }

@@ -18,9 +18,10 @@
 <title>Crypto Beat</title>
 </head>
 <body class="bg-dark" onload="load_coins()">
+    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-3 fixed-top shadow">
         <div class="container">
-            <a href="#" class="navbar-brand">Crypto Beat<small class="text-muted"><h6>Live Price Data</h6></small></a>
+            <a href="index.html" class="navbar-brand">Crypto Beat<small class="text-muted"><h6>Live Price Data</h6></small></a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -47,18 +48,19 @@
     </div>
     <div class="container mt-2">
         <div class="container justify-content-center">
+            <!-- Coin Center -->
             <div class="text-center">
-                <h1 class="mt-5" style="color: rgba(180, 221, 243, 0.8)">COIN CENTER</h1>
+                <h1 class="mt-5" style="color: rgba(180, 221, 243, 0.8)"></h1>
                 <h6 class="container justify-content-center text-light mb-2">Powered by <a href="https://www.coingecko.com/" style="z-index: 4;">CoinGecko</a></h6>
             </div>
             <!-- Coin List Controls  -->
             <div class="d-flex pt-2 mt-2 justify-content-center">
-                <button type="button" class="btn btn-dark shadow mx-1" onclick="load_coins()">Reload Coins</button>
-                <button type="button" class="btn btn-dark shadow mx-1" onclick="clear_data()">Clear Coins</button>
+                <button type="button" class="btn btn-dark shadow mx-1" onclick="load_coins()">Refresh</button>
+                <button type="button" class="btn btn-dark shadow mx-1" onclick="clear_data()">Clear</button>
                 <button class="dropdown btn btn-dark dropdown-toggle shadow mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Sort
                 </button>
-                    <ul class="dropdown-menu col-1">
+                    <ul class="dropdown-menu col-1 bg-dark">
                         <li><a class="dropdown-item" href="#">Name (A-Z)</a></li>
                         <li><a class="dropdown-item" href="#">Highest Price</a></li>
                         <li><a class="dropdown-item" href="#">Lowest Price</a></li>
