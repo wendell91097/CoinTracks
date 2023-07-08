@@ -4,18 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
+<meta name="Description" content="The log in page for Crypto Beat."/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
-<title>CoinTrax - Log In</title>
+<link rel="stylesheet" href="main.css">
+<title>Log In</title>
 </head>
 <body class="bg-dark">
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg py-3 fixed-top shadow">
+    <nav class="navbar navbar-light bg-light navbar-expand-lg py-3 fixed-top shadow">
         <div class="container">
-            <a href="#" class="navbar-brand">CoinTrax<small class="text-muted"><h6>We Track Coins</h6></small></a>
+            <a href="#" class="navbar-brand">Crypto Beat<small class="text-muted"><h6>Live Price Data</h6></small></a>
             <button
-                class="navbar-toggler border-light text-light"
+                class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#navmenu">
@@ -35,10 +36,25 @@
             </div>
         </div>
     </nav>
-    <div class="container py-3">
-        <div class="container py-3"></div>
+    <div class="container py-3 my-3">
+        <div class="container py-3 my-3"></div>
     </div>
-    <img src="static/under_construction.jpg" alt="" style="width: 100vw;">
+    <img src="static/bg-space-land.jpg" alt="" class="bg-img">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="border row border-rounded-2 m-2 login-box shadow">
+                <h3 class="pt-2 my-auto">Log In</h3>
+                <form action="">
+                    <label for="email" class="my-1">Email</label><br>
+                    <input type="email" placeholder="Your Email"><br>
+                    <label for="password" class="my-1">Password</label><br>
+                    <input type="password" placeholder="Your Password"><br>
+                    <input type="checkbox" name="remember" id="" class="my-3">Remember me<br>
+                    <input type="button" value="Submit" class="my-2">
+                </form>
+            </div>
+        </div>
+    </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 </body>

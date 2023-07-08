@@ -4,19 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
+<meta name="Description" content="Crypto Beat is a cutting-edge mobile application designed to provide users with real-time updates and analysis of the cryptocurrency market."/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="main.css">
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="main.js" defer></script>
-<title>CoinTrax - A Brand You Can Trust</title>
+<div>
+    <div class="bg-buddy"></div>
+    <img class="bg-img" src="static/bg-space-land.jpg" alt="">
+</div>
+<title>Crypto Beat</title>
 </head>
-<body class="bg-dark">
+<body class="bg-dark" onload="load_coins()">
     <nav class="navbar navbar-light bg-light navbar-expand-lg py-3 fixed-top shadow">
         <div class="container">
-            <a href="#" class="navbar-brand">CoinTrax<small class="text-muted"><h6>Live Crypto Data</h6></small></a>
+            <a href="#" class="navbar-brand">Crypto Beat<small class="text-muted"><h6>Live Price Data</h6></small></a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -39,59 +43,61 @@
         </div>
     </nav>
     <div class="container p-3 m-3">
-        <div class="container"></div>
+        <div class="container p-3"></div>
     </div>
-    <div class="container mx-3 px-3 py-3">
-        <div>
-            <h1 class="pl-3 mt-5" style="color: rgba(255, 255, 255, .8)">Coin Center</h1>
-            <h6 class="container justify-content-center text-light pl-4">Powered by <a href="https://www.coingecko.com/" style="z-index: 4;">CoinGecko</a></h6>
-            <h1 class="pl-3" style="position: absolute; top: 135px; color: rgba(255, 255, 255, .8)">_________________</h1>
-        </div>
-        <div class="d-flex fd-row">
-            <div>
-                <button class="btn btn-light text-dark shadow m-2" onclick="load_coins()">Load Coins</button>
-                <button class="btn btn-light shadow m-2" onclick="clear_data()">Clear Coins</button>
+    <div class="container mt-2">
+        <div class="container justify-content-center">
+            <div class="text-center">
+                <h1 class="mt-5" style="color: rgba(180, 221, 243, 0.8)">COIN CENTER</h1>
+                <h6 class="container justify-content-center text-light mb-2">Powered by <a href="https://www.coingecko.com/" style="z-index: 4;">CoinGecko</a></h6>
             </div>
-            <div class="dropdown">
-                <button class="btn btn-light text-dark dropdown-toggle shadow m-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    (WIP)
+            <!-- Coin List Controls  -->
+            <div class="d-flex pt-2 mt-2 justify-content-center">
+                <button type="button" class="btn btn-light shadow mx-1" onclick="load_coins()">Reload Coins</button>
+                <button type="button" class="btn btn-light shadow mx-1" onclick="clear_data()">Clear Coins</button>
+                <button class="dropdown btn btn-light text-dark dropdown-toggle shadow mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort
                 </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Name (A-Z)</a></li>
-                    <li><a class="dropdown-item" href="#">Highest Price</a></li>
-                    <li><a class="dropdown-item" href="#">Lowest Price</a></li>
-                    <li><a class="dropdown-item" href="#">Largest Supply</a></li>
-                    <li><a class="dropdown-item" href="#">Smallest Supply</a></li>
-                </ul>
-                
+                    <ul class="dropdown-menu col-1">
+                        <li><a class="dropdown-item" href="#">Name (A-Z)</a></li>
+                        <li><a class="dropdown-item" href="#">Highest Price</a></li>
+                        <li><a class="dropdown-item" href="#">Lowest Price</a></li>
+                        <li><a class="dropdown-item" href="#">Largest Supply</a></li>
+                        <li><a class="dropdown-item" href="#">Smallest Supply</a></li>
+                    </ul>
+            
+                </div>
             </div>
+        
         </div>
     </div>
-    <div class="row pb-5 mb-5 px-3 justify-content-evenly">
-        <div class="pt-3 col-md-3 col-s-11 px-3 mx-3 rounded clicked-coin">
-            <img src="https://assets.coinlayer.com/icons/BTC.png" class="img-fluid py-3" alt=""></img>
-            <ul>
-                <li class="d-flex fd-row"><h6 class="text-info mx-2">Name: </h6><h6 class="text-light">Bitcoin</h6></li>
-                <li class="d-flex fd-row"><h6 class="text-info mx-2">Price: </h6><h6 class="text-light">$27,929.23</h6></li>
-                <li class="d-flex fd-row"><h6 class="text-info mx-2">Symbol: </h6><h6 class="text-light">BTC</h6></li>
-                <li class="d-flex fd-row"><h6 class="text-info mx-2">Supply:</h6><h6 class="text-light">21000000</h6></li>
-            </ul>
-        </div>
-        <div class="mt-2 scrollbar col-md-7 col-s-12">
-            <table class="table rounded shadow">
-                <thead">
-                    <tr>
-                        <th scope="col">Icon</th>
-                        <th scope="col">Symbol</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Supply</th>
-                    </tr>
-                </thead>
-                <tbody class="coin-list rounded">
-                </tbody>
-                </div>
-            </table>
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="container row py-3 mb-5 justify-content-center">
+            <div class="mt-2 rounded-3 clicked-coin text-center col-lg-4 col-12" style="background-color: rgba(0, 0, 0, 0.366);">
+                <img src="https://assets.coinlayer.com/icons/BTC.png" class="img-fluid my-2 py-3" alt=""></img>
+                <ul>
+                    <li class="d-flex fd-row"><h6 class="text-info mx-2">Name: </h6><h6 class="text-light">Bitcoin</h6></li>
+                    <li class="d-flex fd-row"><h6 class="text-info mx-2">Price: </h6><h6 class="text-light">$27,929.23</h6></li>
+                    <li class="d-flex fd-row"><h6 class="text-info mx-2">Symbol: </h6><h6 class="text-light">BTC</h6></li>
+                    <li class="d-flex fd-row"><h6 class="text-info mx-2">Supply:</h6><h6 class="text-light">21000000</h6></li>
+                </ul>
+            </div>
+            <div class="mt-2 scrollbar col-lg-8 col-12 coin-box" style="min-height: 485px;">
+                <table class="table shadow">
+                    <thead style="position: sticky;top: 0; background-color: rgb(25, 23, 23);">
+                        <tr>
+                            <th class="header" scope="col" style="border-left: 3px solid azure;"></th>
+                            <th class="header text-light" scope="col">Symbol</th>
+                            <th class="header text-light" scope="col">Name</th>
+                            <th class="header text-light" scope="col">Price</th>
+                            <th class="header text-light" scope="col">Supply</th>
+                        </tr>
+                    </thead>
+                    <tbody class="coin-list rounded">
+                    </tbody>
+                    </div>
+                </table>
+            </div>
         </div>
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
