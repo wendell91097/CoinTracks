@@ -41,9 +41,9 @@ const create_list = ( symbol, icon, name, market) => {
                     <th scope="row">
                     <img src="${icon.thumb}" class="img-fluid p-1" style="height:30px; width:30px"></img></th>
                     <td class="symbol-col">${symbol}</td>
-                    <td onclick="display_coin('${icon.large}','${name}','${symbol}',${market.current_price.aed},${market.high_24h.aed}, ${market.low_24h.aed}, ${supply})">
+                    <td onclick="display_coin('${icon.large}','${name}','${symbol}',${market.current_price.usd},${market.high_24h.usd}, ${market.low_24h.usd}, ${supply})">
                     <a href="#">${name}</a></td>
-                    <td>$${market.current_price.aed}</td>
+                    <td>$${market.current_price.usd}</td>
                     <td>${supply}</td></tr>`;
     document.querySelector(DOM_Elements.coin_list).insertAdjacentHTML('beforeend', html);
     // onclick="show_info(${symbol})";
@@ -57,7 +57,7 @@ const load_coins = async () => {
     const coins = await getData();
     console.log(coins)
     document.querySelector(DOM_Elements.last_update).innerHTML = ''
-    let update = "Last Updated: " + coins[0]["last_updated"].slice(0,10) + " " + coins[0]["last_updated"].slice(11,19) + " UTC"
+    let update = "Last Updated: " + coins[0]["last_updated"].slice(11,19) + " " + " " + coins[0]["last_updated"].slice(0,10) + " UTC"
     document.querySelector(DOM_Elements.last_update).insertAdjacentHTML('beforeend', update)
     for(let x = 0; x < coins.length; x++){
         create_list(coins[x]['symbol'], coins[x]['image'], coins[x]['name'], coins[x].market_data)
