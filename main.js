@@ -13,14 +13,24 @@ const DOM_Elements = {
     last_update : '.update-cap'
 };
 
+// Create arrow function to display coin movement
+
+const arrow = ( percentage ) => {
+    if(percentage < 0){
+        return `<img src="./static/SVG/arrow-down.svg" alt="down arrow" class="px-1 down-arrow" title="Down ${percentage}%"></img>`
+    } else {
+        return `<img src="./static/SVG/arrow-up.svg" alt="up arrow" class="px-1 up-arrow" title="Up ${percentage}%"></img>`
+    }
+}
+
 // Create the diplay_coin function
 
-function display_coin( icon, name, symbol, price, high, low, supply ) {
+function display_coin( icon, name, symbol, price, high, low, supply, percentage) {
     // const coin_info = input.split(',');
     const coin_html = `<img src="${icon}" class="img-fluid my-2 py-3" alt=""></img>
                         <ul>
                         <li class="d-flex fd-row"><h6 class="text-info mx-2">Name: </h6><h6 class="text-light">${name}</h6></li>
-                        <li class="d-flex fd-row"><h6 class="text-info mx-2">Price: </h6><h6 class="text-light">$${price}</h6></li>
+                        <li class="d-flex fd-row"><h6 class="text-info mx-2">Price: </h6><h6 class="text-light">${arrow(percentage)}$${price}</h6></li>
                         <li class="d-flex fd-row"><h6 class="text-info mx-2">24 Hour High: </h6><h6 class="text-light">$${high}</h6></li>
                         <li class="d-flex fd-row"><h6 class="text-info mx-2">24 Hour Low: </h6><h6 class="text-light">$${low}</h6></li>
                         <li class="d-flex fd-row"><h6 class="text-info mx-2">Symbol: </h6><h6 class="text-light">${symbol}</h6></li>
@@ -41,10 +51,10 @@ const create_list = ( symbol, icon, name, market) => {
                     <th scope="row">
                     <img src="${icon.thumb}" class="img-fluid p-1" style="height:30px; width:30px"></img></th>
                     <td class="symbol-col">${symbol}</td>
-                    <td onclick="display_coin('${icon.large}','${name}','${symbol}',${market.current_price.usd},${market.high_24h.usd}, ${market.low_24h.usd}, ${supply})">
+                    <td onclick="display_coin('${icon.large}','${name}','${symbol}',${market.current_price.usd},${market.high_24h.usd}, ${market.low_24h.usd}, ${supply}, ${market.price_change_percentage_24h})">
                     <a href="#">${name}</a></td>
-                    <td>$${market.current_price.usd}</td>
-                    <td>${supply}</td></tr>`;
+                    <td>${arrow(market.price_change_percentage_24h)}$${market.current_price.usd}</td>
+                    <td class="symbol-col">${supply}</td></tr>`;
     document.querySelector(DOM_Elements.coin_list).insertAdjacentHTML('beforeend', html);
     // onclick="show_info(${symbol})";
 };
@@ -61,7 +71,6 @@ const load_coins = async () => {
     document.querySelector(DOM_Elements.last_update).insertAdjacentHTML('beforeend', update)
     for(let x = 0; x < coins.length; x++){
         create_list(coins[x]['symbol'], coins[x]['image'], coins[x]['name'], coins[x].market_data)
-        console.log('hi')
     }
         
 };

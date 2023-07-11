@@ -14,7 +14,7 @@
 
 *{
     scrollbar-width: auto;
-    scrollbar-color: #addcff #ffffff;
+    scrollbar-color: #addcff #212529;
 }
 
 *::-webkit-scrollbar {
@@ -98,4 +98,16 @@
 
 .btn{
     width: 98px;
+}
+
+.up-arrow{
+    filter: invert(81%) sepia(100%) saturate(1755%) hue-rotate(57deg) brightness(86%) contrast(95%);
+}
+
+.down-arrow{
+    filter: invert(11%) sepia(98%) saturate(5161%) hue-rotate(358deg) brightness(89%) contrast(113%)
+}
+
+.footer{
+    background: #000000b8;
 }
